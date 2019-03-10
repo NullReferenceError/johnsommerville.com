@@ -15,6 +15,11 @@
       "provider": "cdnjs",
       "library": "bootstrap-social@5.1.1",
       "destination": "wwwroot/lib/bootstrap-social/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "font-awesome@5.7.2",
+      "destination": "wwwroot/lib/font-awesome/"
     }
   ]
 }
