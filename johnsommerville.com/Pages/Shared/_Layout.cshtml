@@ -22,8 +22,8 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
-            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-                <ul class="navbar-nav mr-auto flex-grow-1">
+            <div class="navbar-collapse collapse w-100 order-md-0 dual-collapse2">
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <a class="nav-link text-light" asp-area="" asp-page="/Index">/</a>
                     </li>
@@ -35,26 +35,32 @@
                     </li>
                 </ul>
             </div>
-            <div class="mx-auto order-0">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">johnsommerville.com</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <div class="navbar-brand mx-auto order-1">
+                <a class="nav-link text-light" asp-area="" asp-page="/Index">johnsommerville.com</a>
             </div>
             <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a asp-action="Login" asp-controller="Account" class="btn btn-default">Log in with GitHub</a>
-                    </li>
-                </ul>
+                <partial name="_LoginPartial"/>
+
             </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </nav>
     </header>
     <div class="container">
         <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
-            @RenderBody()
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <partial name="_ContactCard" />
+                    </div>
+                    <div class="col-xs-9">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 
