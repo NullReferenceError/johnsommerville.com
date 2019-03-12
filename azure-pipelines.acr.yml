@@ -6,12 +6,14 @@
 trigger:
 - master
 
+name: $(Build.DefinitionName)-$(date:yyyyMMdd)$(rev:.r)
+
 pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:
   buildConfiguration: 'Release'
-  imageName: $(Build.DefinitionName)-$(rev:rr)
+  imageName: $(Build.BuildNumber)
 
 steps:
 - script: |
