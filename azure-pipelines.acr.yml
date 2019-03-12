@@ -28,9 +28,7 @@ steps:
 #    dotnet publish --configuration $(buildConfiguration) --output out
 
 - script: |
-    ls -al
-    cd johnsommerville.com
-    docker build -f 'DockerFile' -t $(dockerTag) .
+    docker build -f 'johnsommerville.com/DockerFile' -t $(dockerTag) .
     docker login -u $(dockerId) -password $pswd $(dockerId).azurecr.io
     docker push $(dockerTag) .
 
