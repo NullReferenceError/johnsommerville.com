@@ -6,7 +6,7 @@
 trigger:
 - master
 
-name: $(Build.DefinitionName)-$(date:yyyyMMdd)$(rev:.r)
+name: $(Build.DefinitionName)-$(date:yyyyMMdd)$(rev:rr)
 
 pool:
   vmImage: 'Ubuntu-16.04'
