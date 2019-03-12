@@ -11,7 +11,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  displayName: 'dotnet build $(buildConfiguration)'
+  imageName: 'dotnet build $(buildConfiguration)'
 
 steps:
 - script: |
