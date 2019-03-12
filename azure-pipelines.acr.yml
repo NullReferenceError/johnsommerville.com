@@ -17,8 +17,8 @@ pool:
 
 steps:
 - script: |
-    echo 'Build config: $(buildConfiguration)'
-    echo 'Image Name: $(imageName)'
+    echo "Build config: $(buildConfiguration)"
+    echo "Image Name: $(imageName)"
 
 
 #- script: |
