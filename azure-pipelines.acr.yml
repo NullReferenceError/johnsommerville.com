@@ -8,14 +8,19 @@ trigger:
 
 name: $(Build.DefinitionName)-$(date:yyyyMMdd)$(rev:rr)
 
-pool:
-  vmImage: 'Ubuntu-16.04'
-
 variables:
   buildConfiguration: 'Release'
   imageName: $(Build.BuildNumber)
+  
+pool:
+    vmImage: 'Ubuntu-16.04'
 
 steps:
+- script: |
+    echo 'Build config: $(buildConfiguration)'
+    echo 'Image Name: $(imageName)'
+
+
 - script: |
     dotnet build --configuration $(buildConfiguration)
     dotnet publish --configuration $(buildConfiguration) --output out
