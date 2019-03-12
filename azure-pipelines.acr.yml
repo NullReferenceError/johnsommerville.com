@@ -21,6 +21,8 @@ steps:
     echo "Build config: $(buildConfiguration)"
     echo "Image Name: $(imageName)"
     echo "Docker Tag: $(dockerTag)"
+    ls -al
+    pwd
 
 
 #- script: |
@@ -31,7 +33,11 @@ steps:
     docker build -f 'johnsommerville.com/DockerFile' -t $(dockerTag) .
     docker login -u $(dockerId) -password $pswd $(dockerId).azurecr.io
     docker push $(dockerTag) .
-
   env:
     pswd: $(dockerPassword)
     
+
+- script: |
+    echo "Post:"
+    ls -al
+    pwd
