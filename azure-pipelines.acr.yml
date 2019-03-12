@@ -11,7 +11,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  imageName: $(BuildDefinitionName)-$(Rev:.r)
+  imageName: $(Build.DefinitionName)-$(Rev:.r)
 
 steps:
 - script: |
