@@ -21,13 +21,13 @@ steps:
     echo 'Image Name: $(imageName)'
 
 
-- script: |
-    dotnet build --configuration $(buildConfiguration)
-    dotnet publish --configuration $(buildConfiguration) --output out
+#- script: |
+#    dotnet build --configuration $(buildConfiguration)
+#    dotnet publish --configuration $(buildConfiguration) --output out
 
 - script: |
     docker build -t $(dockerId).azurecr.io/$(imageName) .
-    docker login -u $(dockerId) -password-stdin $pswd $(dockerId).azurecr.io
+    docker login -u $(dockerId) -password $pswd $(dockerId).azurecr.io
     docker push $(dockerId).azurecr.io/$(imageName) .
 
   env:
