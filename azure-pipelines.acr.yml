@@ -6,11 +6,12 @@
 trigger:
 - master
 
-name: $(Build.DefinitionName)-$(date:yyyyMMdd)$(rev:rr)
+name: $(Build.DefinitionName)-$(date:yyyyMMdd)-$(rev:rr)
 
 variables:
   buildConfiguration: 'Release'
   imageName: $(Build.BuildNumber)
+  dockerTag: $(dockerId).azurecr.io/$(imageName)
   
 pool:
     vmImage: 'Ubuntu-16.04'
@@ -19,6 +20,7 @@ steps:
 - script: |
     echo "Build config: $(buildConfiguration)"
     echo "Image Name: $(imageName)"
+    echo "Docker Tag: $(dockerTag)"
 
 
 #- script: |
@@ -28,9 +30,9 @@ steps:
 - script: |
     ls -al
     cd johnsommerville.com
-    docker build -f 'DockerFile' -t $(dockerId).azurecr.io/$(imageName) .
+    docker build -f 'DockerFile' -t $(dockerTag) .
     docker login -u $(dockerId) -password $pswd $(dockerId).azurecr.io
-    docker push $(dockerId).azurecr.io/$(imageName) .
+    docker push $(dockerTag) .
 
   env:
     pswd: $(dockerPassword)
