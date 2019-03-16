@@ -30,7 +30,7 @@ steps:
 #    dotnet publish --configuration $(buildConfiguration) --output out
 
 - script: |
-    docker build -f 'johnsommerville.com/DockerFile.ci' -t $(dockerTag) .
+    docker build -f 'johnsommerville.com/Dockerfile.ci' -t $(dockerTag) .
     docker login -u $(dockerId) -password $pswd $(dockerId).azurecr.io
     docker push $(dockerTag) .
   env:
