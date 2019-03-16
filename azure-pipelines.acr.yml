@@ -32,7 +32,7 @@ steps:
 - script: |
     docker build -f 'johnsommerville.com/Dockerfile.ci' -t $(dockerTag) .
     docker login -u $(dockerId) -p $pswd $(dockerId).azurecr.io
-    docker push $(dockerTag) .
+    docker push $(dockerTag)
   env:
     pswd: $(dockerPassword)
     
