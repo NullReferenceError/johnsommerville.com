@@ -1,43 +1,48 @@
-# ASP.NET Core
-# Build and test ASP.NET Core projects targeting .NET Core.
-# Add steps that run tests, create a NuGet package, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+pool:
+  vmImage: 'Ubuntu 16.04'
 
 trigger:
-- master
-
-name: $(Build.DefinitionName)-$(date:yyyyMMdd)-$(rev:rr)
+  batch: true
+  branches:
+    include: 
+    - refs/heads/*
+  paths:
+    include: 
+    - parrot/
 
 variables:
-  buildConfiguration: 'Release'
-  imageName: $(Build.BuildNumber)
-  dockerTag: $(dockerId).azurecr.io/$(imageName)
-  
-pool:
-    vmImage: 'Ubuntu-16.04'
+  projectName: parrot
+  registryServerName: '$(registryName).azurecr.io'
+  imageName: '$(projectName)'
+  # define 4 more variables: tenantId, registryName, registryLogin and registryPassword in the build pipeline in UI
+
 
 steps:
-- script: |
-    echo "Build config: $(buildConfiguration)"
-    echo "Image Name: $(imageName)"
-    echo "Docker Tag: $(dockerTag)"
-    ls -al
-    pwd
+- bash: docker build -f $(system.defaultWorkingDirectory)/$(projectName)/Dockerfile -t $(registryServerName)/$(imageName):$(build.buildId) -t $(registryServerName)/$(imageName):latest $(system.defaultWorkingDirectory)/$(projectName)
+  displayName: 'docker build'
 
+- bash: docker login $(registryServerName) -u $(registryLogin) -p $(registryPassword)
+  displayName: 'docker login'
+  condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
 
-#- script: |
-#    dotnet build --configuration $(buildConfiguration)
-#    dotnet publish --configuration $(buildConfiguration) --output out
+- bash: |
+    docker push $(registryServerName)/$(imageName):$(build.buildId)
+    docker push $(registryServerName)/$(imageName):latest
+  displayName: 'docker push'
+  condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
 
-- script: |
-    docker build -f 'johnsommerville.com/Dockerfile' -t $(dockerTag) .
-    docker login -u $(dockerId) -p $pswd $(dockerId).azurecr.io
-    docker push $(dockerTag)
-  env:
-    pswd: $(dockerPassword)
-    
+- task: HelmInstaller@0
+  displayName: 'Install Helm'
+  inputs:
+    helmVersion: 2.13.0
 
-- script: |
-    echo "Post:"
-    ls -al
-    pwd
+- bash: helm package --version $(build.buildId) --destination $(build.artifactStagingDirectory) $(system.defaultWorkingDirectory)/$(projectName)/charts/$(projectName)
+  displayName: 'helm package'
+  
+- bash: az login --service-principal -u $(registryLogin) -p $(registryPassword) -t $(tenantId)
+  displayName: 'az login'
+  condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
+
+- bash: az acr helm push -n $(registryName) $(build.artifactStagingDirectory)/$(projectName)-$(build.buildId).tgz
+  displayName: 'az acr helm push'
+  condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
