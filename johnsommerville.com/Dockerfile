@@ -7,7 +7,7 @@ FROM microsoft/dotnet:2.2-sdk AS build
 WORKDIR /src
 COPY *.csproj ./
 RUN dotnet restore
-COPY . .
+COPY . ./
 WORKDIR "/src/johnsommerville.com"
 RUN dotnet publish -c Release -o /app
 
