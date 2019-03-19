@@ -1,17 +1,18 @@
-FROM microsoft/dotnet:2.2-aspnetcore-runtime AS base
+FROM microsoft/aspnetcore-build:2.2 AS build-env
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM microsoft/dotnet:2.2-sdk AS build
-WORKDIR /src
+# Copy csproj and restore as distinct layers
 COPY *.csproj ./
 RUN dotnet restore
-COPY . ./
-WORKDIR "/src/johnsommerville.com"
-RUN dotnet publish -c Release -o /app
 
-FROM base AS final
+# Copy everything else and build
+COPY . ./
+RUN dotnet publish -c Release -o out
+
+# Build runtime image
+FROM microsoft/aspnetcore:2.2
 WORKDIR /app
-COPY --from=publish /app .
+COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "johnsommerville.com.dll"]
