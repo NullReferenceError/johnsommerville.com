@@ -8,10 +8,10 @@ trigger:
     - refs/heads/*
   paths:
     include: 
-    - parrot/
+    - johnsommerville.com/
 
 variables:
-  projectName: parrot
+  projectName: johnsommerville.com
   registryServerName: '$(registryName).azurecr.io'
   imageName: '$(projectName)'
   # define 4 more variables: tenantId, registryName, registryLogin and registryPassword in the build pipeline in UI
