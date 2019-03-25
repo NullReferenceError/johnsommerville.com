@@ -7,7 +7,7 @@
 <h1 class="display-4">Skills</h1>
 <p>Software and other skills ranked by proficiency</p>
 <ul>
-    @foreach(var skill in Model.SkillsList)
+    @foreach(var skill in Model.SkillsList.OrderByDescending(u => u.Proficiency))
     {
         <li>@skill.SkillName - @skill.Proficiency</li>
     }

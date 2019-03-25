@@ -5,59 +5,17 @@
 }
 <h1 class="display-4">Experience</h1>
 
-<ul>
-    <li>Senior Applications Developer</li>
-    <li>Texas Woman's University</li>
-    <li>Denton, Texas</li>
-    <li>May 2016 - Present</li>
-</ul>
-<br />
-<ul>
-    <li>Software Application Developer</li>
-    <li>Brierley+Partners</li>
-    <li>Plano, Texas</li>
-    <li>Aug 2013 - Current</li>
-    <li>Provide client development, data modeling, integration and support</li>
-    <li>Participate in Agile Methodologies with teams to achieve goals through an entire software development life cycle</li>
-    <li>Utilize PetaPoco and NHibernate as ODBC connectors for Application to Database communication</li>
-    <li>Implement Jenkins as a Continuous Integration utility for migrating code to upper environments</li>
-    <li>Create testing plan procedures and technical documentation for supported code</li>
-</ul>
-<br />
-<ul>
-    <li>Solutions Engineer</li>
-    <li>LG Networks Inc</li>
-    <li>Dallas, Texas</li>
-    <li>January 2013 - Aug 2013</li>
-    <li>Created, managed, and upgraded Active Directory Domain Controllers, Microsoft Exchange servers,  and other various servers for over 30 small business clients in the DFW metroplex</li>
-    <li>Program solutions for client issues, including VB.NET, C#, or scripts to produce programs that manipulated data or files for small business flow</li>
-    <li>Maintained Level 1 and Level 2 help desk support, as well as 24/7 rotating call schedule</li>
-</ul>
-<ul>
-    <li>IT Manager/Server Administrator</li>
-    <li>Clinic of Dr. John G. McHenry Neuro-Ophthalmology</li>
-    <li>Dates EmployedMay 2012 – Oct 2012</>
-    <li>Dallas, Texas</li>
-    <li>Manage 5 Windows 2008 servers, several SQL databases, around 60 workstations and users</li>
-    <li>Troubleshoot and develop solutions for different types of eye field examination devices</li>
-</ul>
-<br />
-<ul>
-    <li>Operational Support Technician</li>
-    <li>University of North Texas Libraries</li>
-    <li>Denton, Texas</li>
-    <li>September 2010 - May 2012</li>
-    <li>Managed Windows and Mac OS X systems with software distribution platforms and server management systems</li>
-    <li>Provided support for network administrators, help desk supervisors, and programmers</li>
-    <li>Assisted Library patrons and staff with computer technical support, hardware support, and software support</li>
-</ul>
-<br />
-<ul>
-    <li>Co-op/Intern</li>
-    <li>L-3 Communications Link Simulation and Training</li>
-    <li>Arlington, Texas</li>
-    <li>Jul 2008 - Feb 2010</li>
-    <li>Provided support for program, software, and system engineers</li>
-    <li>Worked in developing flight simulators for Royal Danish Air Force, The Hellenic Air Force (Greece), American Air Force, and the American Navy</li>
-    <li>Acquired and maintained a DOD Secret Clearance throughout internship</li>
-</ul>
+@foreach(var employer in Model.Employers.OrderByDescending(u => u.StartDate))
+{
+<div class="container">
+    <div class="h2">@employer.JobTitle</div>
+    <div class="h3">@employer.EmployerName</div>
+    <div>@employer.StartDate.ToString("MMMM yyyy") - @(employer.EndDate.HasValue ? employer.EndDate.Value.ToString("MMMM yyyy") : "Current")</div>
+    <ul>
+        @foreach (var responsibility in employer.Responsibilities)
+        {
+            <li>@responsibility</li>
+        }
+    </ul>
+</div>
+}
