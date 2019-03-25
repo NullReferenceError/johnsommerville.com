@@ -26,6 +26,14 @@ namespace johnsommerville.com.Pages
             new IndividualSkill("PHP", SkillLevel.Intermediate),
             new IndividualSkill("Windows Server Administration", SkillLevel.Expert),
             new IndividualSkill("Unix/Linux Server Administration", SkillLevel.Intermediate),
+            new IndividualSkill("MVC Design", SkillLevel.Expert),
+            new IndividualSkill("Razor Pages", SkillLevel.Advanced),
+            new IndividualSkill("bash", SkillLevel.Intermediate),
+            new IndividualSkill("C#", SkillLevel.Expert),
+            new IndividualSkill("VB", SkillLevel.Expert),
+            new IndividualSkill("C", SkillLevel.Intermediate),
+            new IndividualSkill("C++", SkillLevel.Intermediate),
+
 
         };
 
