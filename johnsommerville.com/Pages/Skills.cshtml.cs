@@ -33,6 +33,10 @@ namespace johnsommerville.com.Pages
             new IndividualSkill("VB", SkillLevel.Expert),
             new IndividualSkill("C", SkillLevel.Intermediate),
             new IndividualSkill("C++", SkillLevel.Intermediate),
+            new IndividualSkill("HTML5", SkillLevel.Advanced),
+            new IndividualSkill("AWS", SkillLevel.Intermediate),
+            new IndividualSkill("Azure", SkillLevel.Intermediate),
+            new IndividualSkill("Google Cloud", SkillLevel.Intermediate),
 
 
         };
