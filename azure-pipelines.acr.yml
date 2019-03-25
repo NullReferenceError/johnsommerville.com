@@ -26,8 +26,8 @@ steps:
   condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
 
 - bash: |
-    docker push $(registryServerName)/$(imageName):$(build.buildId)
-    docker push $(registryServerName)/$(imageName):latest
+    docker push $(imageName):$(build.buildId)
+    docker push $(imageName):latest
   displayName: 'docker push'
   condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
 
