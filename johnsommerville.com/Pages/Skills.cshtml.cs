@@ -15,6 +15,7 @@ namespace johnsommerville.com.Pages
             new IndividualSkill(".NET Framework", SkillLevel.Expert),
             new IndividualSkill(".NET Core", SkillLevel.Expert),
             new IndividualSkill("Docker", SkillLevel.Novice),
+            new IndividualSkill("Kubernetes", SkillLevel.Novice),
             new IndividualSkill("Javascript", SkillLevel.Advanced),
             new IndividualSkill("CSS", SkillLevel.Intermediate),
             new IndividualSkill("SQL Server", SkillLevel.Advanced),
