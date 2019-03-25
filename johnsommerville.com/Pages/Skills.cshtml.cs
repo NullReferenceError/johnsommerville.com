@@ -14,7 +14,18 @@ namespace johnsommerville.com.Pages
         {
             new IndividualSkill(".NET Framework", SkillLevel.Expert),
             new IndividualSkill(".NET Core", SkillLevel.Expert),
-            new IndividualSkill("Docker", SkillLevel.Novice)
+            new IndividualSkill("Docker", SkillLevel.Novice),
+            new IndividualSkill("Javascript", SkillLevel.Advanced),
+            new IndividualSkill("CSS", SkillLevel.Intermediate),
+            new IndividualSkill("SQL Server", SkillLevel.Advanced),
+            new IndividualSkill("Oracle Dataabase", SkillLevel.Advanced),
+            new IndividualSkill("Git", SkillLevel.Expert),
+            new IndividualSkill("TFVC", SkillLevel.Expert),
+            new IndividualSkill("Powershell", SkillLevel.Expert),
+            new IndividualSkill("Java", SkillLevel.Intermediate),
+            new IndividualSkill("PHP", SkillLevel.Intermediate),
+            new IndividualSkill("Windows Server Administration", SkillLevel.Expert),
+            new IndividualSkill("Unix/Linux Server Administration", SkillLevel.Intermediate),
 
         };
 
