@@ -21,14 +21,15 @@ steps:
 - bash: docker build -f $(system.defaultWorkingDirectory)/$(projectName)/Dockerfile -t $(imageName):$(build.buildId) -t $(imageName):latest $(system.defaultWorkingDirectory)/$(projectName)
   displayName: 'docker build'
 
+  #Login and push for Azure
 - bash: docker login $(registryServerName) -u $(registryLogin) -p $(registryPassword)
-  displayName: 'docker login'
+  displayName: 'docker login (Azure)'
   condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
 
 - bash: |
     docker push $(imageName):$(build.buildId)
     docker push $(imageName):latest
-  displayName: 'docker push'
+  displayName: 'docker push (Azure)'
   condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
 
 - task: HelmInstaller@0
@@ -39,6 +40,7 @@ steps:
 - bash: helm package --version $(build.buildId) --destination $(build.artifactStagingDirectory) $(system.defaultWorkingDirectory)/$(projectName)/charts/$(chartName)
   displayName: 'helm package'
   
+  #Push Helm charts to Azure
 - bash: az login --service-principal -u $(registryLogin) -p $(registryPassword) -t $(tenantId)
   displayName: 'az login'
   condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
