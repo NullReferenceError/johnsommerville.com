@@ -1,6 +1,7 @@
-# https://blog.siliconvalve.com/2017/10/23/continuous-deployment-for-docker-with-vsts-and-azure-container-registry/
-FROM microsoft/dotnet:2.2-aspnetcore-runtime AS build-env
+FROM microsoft/dotnet:2.2-sdk AS build-env
 WORKDIR /app
+EXPOSE 80
+EXPOSE 443
 
 # Copy csproj and restore as distinct layers
 COPY *.csproj ./

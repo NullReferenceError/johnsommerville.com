@@ -5,11 +5,16 @@
 }
 
 
-<h1 class="display-4">Skills</h1>
+<h1>Skills</h1>
 <p>Software and other skills ranked by proficiency</p>
-<ul>
-    @foreach (var skill in Model.SkillsList.OrderByDescending(u => u.Proficiency))
-    {
-        <li>@skill.SkillName - @skill.Proficiency</li>
-    }
-</ul>
+@foreach (var skillProf in Model.SkillsList.OrderByDescending(u => u.Proficiency).Select(u => u.Proficiency).Distinct())
+{
+    <h2>@skillProf</h2>
+    <p>
+        @foreach (var relatedSkills in Model.SkillsList.Where(u => u.Proficiency == skillProf))
+        {
+            <text> | </text>
+            @relatedSkills.SkillName
+        }
+    </p>
+}

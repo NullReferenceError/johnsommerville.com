@@ -14,12 +14,12 @@ namespace johnsommerville.com.Pages
         {
             new IndividualSkill(".NET Framework", SkillLevel.Expert),
             new IndividualSkill(".NET Core", SkillLevel.Expert),
-            new IndividualSkill("Docker", SkillLevel.Novice),
-            new IndividualSkill("Kubernetes", SkillLevel.Novice),
-            new IndividualSkill("Javascript", SkillLevel.Advanced),
+            new IndividualSkill("Docker", SkillLevel.Intermediate),
+            new IndividualSkill("Kubernetes", SkillLevel.Intermediate),
+            new IndividualSkill("JavaScript", SkillLevel.Advanced),
             new IndividualSkill("CSS", SkillLevel.Intermediate),
-            new IndividualSkill("SQL Server", SkillLevel.Advanced),
-            new IndividualSkill("Oracle Dataabase", SkillLevel.Advanced),
+            new IndividualSkill("SQL Database (T-SQL)", SkillLevel.Advanced),
+            new IndividualSkill("Oracle Dataabase (PL/SQL)", SkillLevel.Advanced),
             new IndividualSkill("Git", SkillLevel.Expert),
             new IndividualSkill("TFVC", SkillLevel.Expert),
             new IndividualSkill("Powershell", SkillLevel.Expert),
@@ -38,7 +38,8 @@ namespace johnsommerville.com.Pages
             new IndividualSkill("AWS", SkillLevel.Intermediate),
             new IndividualSkill("Azure", SkillLevel.Intermediate),
             new IndividualSkill("Google Cloud", SkillLevel.Intermediate),
-
+            new IndividualSkill("CI/CD", SkillLevel.Expert),
+            new IndividualSkill("Azure DevOps and TFS", SkillLevel.Expert)
 
         };
 

@@ -1,25 +1,28 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "About myself and this site";
+    ViewData["Title"] = "About";
 }
 
-<h1 class="display-4">Myself</h1>
+<h1>About Me</h1>
+
 <p>Hello.  My name is John Sommerville, and I am a Software Engineer with a passion for new and expanding technologies.</p>
 <p>I enjoy implementing systems with Web APIs, as well as fulfilling client and customer's dreams of working, effortless solutions.</p>
 <p>I also enjoy building custom watercooled PCs and tinkering with a homelab in my free time.</p>
 
-<h1 class="display-4">This site</h1>
+<h1>About My Site</h1>
 <p>This site was written in dotnet core 2.2 with Razor Pages.</p>
+<p>The source code <a href="https://github.com/NullReferenceError/johnsommerville.com">exists on Github.</a></p>
 <p>Commits to this site automatically build in Azure DevOps, and Pull Requests to master are automatically deployed.</p>
 <p>Currently this site is running in a docker container, deployed to the Azure Kubernetes Service with help from Helm.</p>
 <p>Check list of things to do still:</p>
 <ul>
-    <li>Move resume over</li>
-    <li>Write up the about page</li>
-    <li>Get look and feel working/looking good</li>
-    <li>NGinx reverse proxy pointing to other cloud service deployments (Azure, AWS, Google)</li>
-    <li>Get Docker deployment running on multiple cloud services</li>
+    <li>Publish Docker Image to an Amazon ECR</li>
+    <li>Deploy to Kubernetes instance on AWS</li>
+    <li>Publish Docker Image to a Google Cloud Container Registry</li>
+    <li>Deploy to Google Kubernetes instance</li>
+    <li>Setup NGinx reverse proxy pointing to other cloud service deployments</li>
+    <li>Move pagedata into database</li>
     <li>Start blog pages</li>
     <li>Start testing ground/project pages</li>
 </ul>

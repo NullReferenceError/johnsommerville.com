@@ -17,55 +17,58 @@
               crossorigin="anonymous"
               integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" />
     </environment>
+    <link rel="stylesheet" href="https://use.typekit.net/ikp6toj.css">
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
-            <div class="navbar-collapse collapse w-100 order-md-0 dual-collapse2">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link text-light" asp-area="" asp-page="/Index">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" asp-area="" asp-page="/Skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" asp-area="" asp-page="/Experience">Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" asp-area="" asp-page="/Education">Education</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="navbar-brand mx-auto order-1">
-                <a class="nav-link text-light" asp-area="" asp-page="/Index">johnsommerville.com</a>
-            </div>
-            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-                @*<partial name="_LoginPartial"/>*@
-            </div>
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-light navbar-toggleable-sm border-bottom box-shadow mb-3">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="navbar-brand mx-auto order-1">
+                <a class="nav-link" asp-area="" asp-page="/Index">John Sommerville</a>
+            </div>
+            <div class="navbar-collapse collapse w-100 order-md-0">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" asp-area="" asp-page="/Index">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/Skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/Experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/Education">Education</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-collapse collapse w-100 order-3">
+                @*<partial name="_LoginPartial"/>*@
+            </div>
         </nav>
     </header>
     <div class="container">
         @*<partial name="_CookieConsentPartial" />*@
         <main role="main" class="pb-3">
-            <div class="row">
-                <div class="col-md-4">
-                    <partial name="_ContactCard" />
-                </div>
-                <div class="col-md-8">
-                    @RenderBody()
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        @RenderBody()
+                    </div>
+                    <div class="col-md-4">
+                        <partial name="_ContactCard" />
+                    </div>
                 </div>
             </div>
         </main>
     </div>
-
     <footer class="border-top footer text-muted">
         <div class="container">
+
             &copy; 2019 - johnsommerville.com - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
@@ -95,5 +98,22 @@
 @section Scripts {
     <script type="text/javascript" src="~/lib/twitter-bootstrap/bootstrap.js"></script>
     <script type="text/javascript" src="~/lib/font-awesome/js/all.js"></script>
-
 }
+
+
+<script type="text/javascript">
+    window.onscroll = function () {
+        lockNavbar()
+    };
+
+    var header = document.getElementById("navbar");
+    var offsetTop = header.offsetTop;
+
+    function lockNavbar() {
+        if (window.pageYOffset > offsetTop) {
+            header.classList.add("navbar-fixed");
+        } else {
+            header.classList.remove("navbar-fixed");
+        }
+    };
+</script>
