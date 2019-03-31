@@ -21,7 +21,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="navbar-collapse collapse w-100 order-md-0 dual-collapse2">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
@@ -53,19 +53,21 @@
     <div class="container">
         @*<partial name="_CookieConsentPartial" />*@
         <main role="main" class="pb-3">
-            <div class="row">
-                <div class="col-md-4">
-                    <partial name="_ContactCard" />
-                </div>
-                <div class="col-md-8">
-                    @RenderBody()
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        @RenderBody()
+                    </div>
+                    <div class="col-md-4">
+                        <partial name="_ContactCard" />
+                    </div>
                 </div>
             </div>
         </main>
     </div>
-
     <footer class="border-top footer text-muted">
         <div class="container">
+
             &copy; 2019 - johnsommerville.com - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
@@ -95,5 +97,31 @@
 @section Scripts {
     <script type="text/javascript" src="~/lib/twitter-bootstrap/bootstrap.js"></script>
     <script type="text/javascript" src="~/lib/font-awesome/js/all.js"></script>
-
 }
+
+
+<script type="text/javascript">
+    //Example for sticky navbar taken from here: https://codepen.io/ncko/pen/GyFzk
+    (function ($) {
+        "use strict";
+
+        var $navbar = $("#navbar"),
+            y_pos = $navbar.offset().top,
+            height = $navbar.height();
+
+        $(document).scroll(function () {
+            var scrollTop = $(this).scrollTop();
+
+            if (scrollTop > y_pos + height) {
+                $navbar.addClass("navbar-fixed").animate({
+                    top: 0
+                });
+            } else if (scrollTop <= y_pos) {
+                $navbar.removeClass("navbar-fixed").clearQueue().animate({
+                    top: "-48px"
+                }, 0);
+            }
+        });
+
+    })(jQuery, undefined);
+</script>

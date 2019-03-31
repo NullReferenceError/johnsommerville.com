@@ -2,10 +2,43 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
+/* Style the navbar */
+#navbar {
+    overflow: hidden;
+    background-color: #333;
+    height: 3em;
+    z-index: 9;
+}
+
+/* Navbar links */
+#navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+.navbar-fixed {
+    position: fixed;
+    top: -3em;
+    width: 100%;
+}
+
+
+/* Sticky for navbar */
+.contactCard-fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+}
+
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -53,4 +86,10 @@ body {
   /* Set the fixed height of the footer here */
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
+}
+
+h1 {
+    font-family: bebas-neue, sans-serif;
+    font-style: normal;
+    font-weight: 400;
 }
