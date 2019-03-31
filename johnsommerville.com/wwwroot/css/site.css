@@ -114,3 +114,34 @@ h1 {
 h2 {
     font-weight: 600;
 }
+
+p {
+    font-family: raleway, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+li {
+    font-family: raleway, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.avatar {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+}
+
+.avatar img {
+    width:100%;
+    height:auto;
+    margin-top: -30px;
+    margin-bottom: -30px;
+}
+
