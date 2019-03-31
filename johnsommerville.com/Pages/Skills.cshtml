@@ -5,7 +5,7 @@
 }
 
 
-<h1 class="display-4">Skills</h1>
+<h1>Skills</h1>
 <p>Software and other skills ranked by proficiency</p>
 @foreach (var skillProf in Model.SkillsList.OrderByDescending(u => u.Proficiency).Select(u => u.Proficiency).Distinct())
 {

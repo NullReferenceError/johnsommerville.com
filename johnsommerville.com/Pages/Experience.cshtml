@@ -3,35 +3,37 @@
 @{
     ViewData["Title"] = "Experience";
 }
-<h1 class="display-4">Experience</h1>
+<h1>Experience</h1>
 
-@foreach(var employer in Model.Employers.OrderByDescending(u => u.StartDate))
+@foreach (var employer in Model.Employers.OrderByDescending(u => u.StartDate))
 {
-<div class="container">
-    <div class="h2">@employer.JobTitle</div>
-    <div class="h3">@employer.EmployerName</div>
-    <div class="h3">@employer.Location</div>
-    <div class="h3">@employer.StartDate.ToString("MMMM yyyy") - @(employer.EndDate.HasValue ? employer.EndDate.Value.ToString("MMMM yyyy") : "Current")</div>
-    @if (employer.Responsibilities != null && employer.Responsibilities.Count() > 0)
-    {
-    <div class="h3">Roles and Responsibilities</div>
-    <ul>
-        @foreach (var responsibility in employer.Responsibilities)
+    <div class="container">
+        <h2>@employer.JobTitle</h2>
+        <h3>@employer.EmployerName</h3>
+        <h3>@employer.Location</h3>
+        <h3>@employer.StartDate.ToString("MMMM yyyy") - @(employer.EndDate.HasValue ? employer.EndDate.Value.ToString("MMMM yyyy") : "Current")</h3>
+        @if (employer.Responsibilities != null && employer.Responsibilities.Count() > 0)
         {
-            <li>@responsibility</li>
+            <h3>Roles and Responsibilities</h3>
+            <ul>
+                @foreach (var responsibility in employer.Responsibilities)
+                {
+                    <li>@responsibility</li>
+                }
+            </ul>
         }
-    </ul>
-    }
-    @if (employer.Accomplishments != null && employer.Accomplishments.Count() > 0)
-    {
-    <div class="h3">Projects and Accomplishments</div>
-    <ul>
-        @foreach (var accomplishment in employer.Accomplishments)
+        @if (employer.Accomplishments != null && employer.Accomplishments.Count() > 0)
         {
-            <li>@accomplishment</li>
+            <h3>Projects and Accomplishments</h3>
+            <ul>
+                @foreach (var accomplishment in employer.Accomplishments)
+                {
+                    <li>@accomplishment</li>
+                }
+            </ul>
         }
-    </ul>
-    }
-</div>
-    <br/>
+    </div>
+    <br />
+    <br />
+
 }
