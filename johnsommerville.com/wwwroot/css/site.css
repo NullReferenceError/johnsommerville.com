@@ -10,7 +10,6 @@ a.navbar-brand {
 #navbar {
     overflow: hidden;
     background-color: #333;
-    height: 3em;
     z-index: 9;
 }
 
@@ -26,8 +25,12 @@ a.navbar-brand {
 
 .navbar-fixed {
     position: fixed;
-    top: -3em;
+    top: 0;
     width: 100%;
+}
+
+.navbar-fixed + .content {
+    padding-top: 48px;
 }
 
 

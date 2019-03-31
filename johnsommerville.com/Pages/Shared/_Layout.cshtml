@@ -101,27 +101,18 @@
 
 
 <script type="text/javascript">
-    //Example for sticky navbar taken from here: https://codepen.io/ncko/pen/GyFzk
-    (function ($) {
-        "use strict";
+    window.onscroll = function () {
+        lockNavbar()
+    };
 
-        var $navbar = $("#navbar"),
-            y_pos = $navbar.offset().top,
-            height = $navbar.height();
+    var header = document.getElementById("navbar");
+    var offsetTop = header.offsetTop;
 
-        $(document).scroll(function () {
-            var scrollTop = $(this).scrollTop();
-
-            if (scrollTop > y_pos + height) {
-                $navbar.addClass("navbar-fixed").animate({
-                    top: 0
-                });
-            } else if (scrollTop <= y_pos) {
-                $navbar.removeClass("navbar-fixed").clearQueue().animate({
-                    top: "-48px"
-                }, 0);
-            }
-        });
-
-    })(jQuery, undefined);
+    function lockNavbar() {
+        if (window.pageYOffset > offsetTop) {
+            header.classList.add("navbar-fixed");
+        } else {
+            header.classList.remove("navbar-fixed");
+        }
+    };
 </script>
