@@ -41,8 +41,8 @@ namespace johnsommerville.com.Pages
                 new List<string>()
                 {
                     "Maintained the Hertz Rewards Program with junior developers",
-                    "Designed and Implemented the American Family Insurance program",
-                    "Designed and Implemented the Kelloggs program"
+                    "Designed and Implemented the American Family Insurance Loyalty program with implementation team",
+                    "Designed and Implemented the Kelloggs program with implementation team"
                 }),
              new Employer("Solutions Engineer","LG Networks, Inc.", "Dallas, Texas", DateTime.Parse("01/01/2013"), DateTime.Parse("08/01/2013"),
                 new List<string>()
