@@ -35,7 +35,6 @@ namespace johnsommerville.com.Pages
                 {
                     "Provide client development, data modeling, integration and support for clients utilizing the LoyaltyWare framework",
                     "Participate in Agile Methodologies with teams to achieve goals through an entire software development life cycle",
-                    "Utilize PetaPoco and NHibernate as ODBC connectors for Application to Database communication",
                     "Implement Jenkins as a Continuous Integration utility for migrating code to upper environments",
                     "Create testing plan procedures and technical documentation for supported code"
                 },
