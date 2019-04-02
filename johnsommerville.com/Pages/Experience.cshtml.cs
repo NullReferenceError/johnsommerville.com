@@ -14,18 +14,19 @@ namespace johnsommerville.com.Pages
             new Employer("Senior Applications Developer","Texas Woman's University", "Denton, Texas", DateTime.Parse("05/01/2016"),null, 
                 new List<string>()
                 {
-                    "Manage web applications, web apis, and custom workflow solutions for University Departments that align with the University’s Strategic Plan throughout the entire Software Development Lifecycle",
-                    "Integrate 3rd party software solutions with the Universities information and student systems",
+                    "Manage web applications, Web APIs, and custom workflow solutions for university departments that align with the university’s strategic plan throughout the entire software development lifecycle",
+                    "Integrate 3rd party software solutions with the university's information and student systems",
                     "Server Administrator for applications servers, processing servers, and web servers for custom applications and 3rd party solutions",
                     "Team Foundation Server administrator and DevOps subject matter expert for source code maintenance and Continuous Integration/Continuous Deployment (CI/CD) implementations and configuration",
-                    "Create and maintain testing plans and application documentation for internal and external users in a centralized knowledge base"
+                    "Create and maintain testing plans and application documentation for internal and external users in a centralized knowledge base",
+                    "Conduct training sessions with end users and other departmental staff that regularly utilize the tools the Office of Technology builds or adopts"
                 },
                 new List<string>()
                 {
                     "Consolidated several SIS, EIS and directory systems to specific identity web api endpoints and microservices to assist Web Developers with system integrations",
                     "Migrated hundreds of legacy projects and source code from Visual source safe to Git repositories",
                     "Establish best practices for CI/CD implementations with development teams",
-                    "Modernize legacy applications from outdated code bases (classic ASP, VB6) to .NET Core and .NET Frameworks",
+                    "Modernize legacy applications from outdated code bases (Classic ASP, VB6) to .NET Core and .NET Frameworks",
                     "Create applications with meaningful user experiences using HTML5, Javascript, and client user libraries",
                     "Participate in working groups to improve the organizations needs, including ITSM system implementation working group and change management working group"
                 }
@@ -40,16 +41,16 @@ namespace johnsommerville.com.Pages
                 },
                 new List<string>()
                 {
-                    "Maintained the Hertz Rewards Program with junior developers",
-                    "Designed and Implemented the American Family Insurance Loyalty program with implementation team",
-                    "Designed and Implemented the Kelloggs program with implementation team"
+                    "Maintained and upgraded the Hertz Rewards Program with junior developers",
+                    "Lead developer on the American Family Insurance Loyalty team that designed and implemented the companies Loyalty program",
+                    "Lead developer on the Kelloggs Loyalty team team that designed and implemented the companies Loyalty program"
                 }),
              new Employer("Solutions Engineer","LG Networks, Inc.", "Dallas, Texas", DateTime.Parse("01/01/2013"), DateTime.Parse("08/01/2013"),
                 new List<string>()
                 {
                     "Act as Windows System Administrator for over 30 small business customers across the DFW metroplex",
                     "Implement, manage, and upgrade Active Directory Domain Controllers, Microsoft Exchange servers, and other various servers per the clients requirements",
-                    "Develop and implement custom solutions amd scripts for client needs",
+                    "Develop and implement custom solutions and scripts for clients' needs",
                     "Maintained Level 1 and Level 2 help desk support, as well as 24/7 rotating call schedule"
                 },
                 new List<string>()
@@ -58,9 +59,9 @@ namespace johnsommerville.com.Pages
              new Employer("IT Manager and Windows System Administrator","Office Clinic of Dr. John G. McHenry Neuro-Ophthalmology", "Dallas, Texas", DateTime.Parse("05/01/2012"), DateTime.Parse("10/01/2012"),
                 new List<string>()
                 {
-                    "Act as Windows System Administrator for 5 Windows 2008 servers and several SQL databases",
-                    "Provide all levels of Technical Support for 60 workstations and users",
-                    "Troubleshoot and develop solutions for different types of eye field examination devices"
+                    "Acted as Windows System Administrator for 5 Windows 2008 servers and several SQL databases",
+                    "Provided all levels of Technical Support for 60 workstations and users",
+                    "Troubleshoot and developed solutions for different types of eye field examination devices"
                 },
                 new List<string>()
                 {
@@ -70,7 +71,7 @@ namespace johnsommerville.com.Pages
                 {
                     "Managed Windows and Mac OS X systems with software distribution platforms and server management systems",
                     "Provided scripting and development support for network administrators, help desk supervisors, and programmers",
-                    "Assist Library patrons and staff with computer technical support, hardware support, and software support"
+                    "Assisted library patrons and staff with computer technical support, hardware support, and software support"
                 },
                 new List<string>()
                 {
@@ -78,10 +79,10 @@ namespace johnsommerville.com.Pages
               new Employer("Co-op/Intern","L-3 Communications, Link Simulation and Training", "Arlington, Texas", DateTime.Parse("07/01/2008"), DateTime.Parse("02/01/2010"),
                 new List<string>()
                 {
-                    "Provide support for program, software, and system engineers",
-                    "Pull flight analytics and statistical information for engineers",
-                    "Assist engieners with developing flight simulators for Royal Danish Air Force, The Hellenic Air Force (Greece), American Air Force, and the American Navy",
-                    "Acquire and maintained a DOD Secret Clearance throughout internship"
+                    "Provided support for program, software, and system engineers",
+                    "Pulled flight analytics and statistical information for engineers",
+                    "Assisted engineers with developing flight simulators for Royal Danish Air Force, The Hellenic Air Force (Greece), American Air Force, and the American Navy",
+                    "Acquired and maintained a DOD Secret Clearance throughout internship"
                 },
                 new List<string>()
                 {

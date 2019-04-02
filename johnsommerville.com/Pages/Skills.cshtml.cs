@@ -19,7 +19,7 @@ namespace johnsommerville.com.Pages
             new IndividualSkill("JavaScript", SkillLevel.Advanced),
             new IndividualSkill("CSS", SkillLevel.Intermediate),
             new IndividualSkill("SQL Database (T-SQL)", SkillLevel.Advanced),
-            new IndividualSkill("Oracle Dataabase (PL/SQL)", SkillLevel.Advanced),
+            new IndividualSkill("Oracle Database (PL/SQL)", SkillLevel.Advanced),
             new IndividualSkill("Git", SkillLevel.Expert),
             new IndividualSkill("TFVC", SkillLevel.Expert),
             new IndividualSkill("Powershell", SkillLevel.Expert),
