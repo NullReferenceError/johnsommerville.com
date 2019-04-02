@@ -7,6 +7,7 @@ Currently this site is running in a docker container, deployed to the Azure Kube
 [![Build Status](https://dev.azure.com/jacksomm/jacksomm/_apis/build/status/johnsommerville-com?branchName=master)](https://dev.azure.com/jacksomm/jacksomm/_build/latest?definitionId=2&branchName=master)
 
 Check list of things to do still:
+* Use Helm to get Let's Encrypt automated SSL cert process working
 * Publish Docker Image to an Amazon ECR
 * Deploy to Kubernetes instance on AWS
 * Publish Docker Image to a Google Cloud Container Registry
