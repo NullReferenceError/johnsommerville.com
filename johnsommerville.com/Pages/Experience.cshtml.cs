@@ -59,9 +59,9 @@ namespace johnsommerville.com.Pages
              new Employer("IT Manager and Windows System Administrator","Office Clinic of Dr. John G. McHenry Neuro-Ophthalmology", "Dallas, Texas", DateTime.Parse("05/01/2012"), DateTime.Parse("10/01/2012"),
                 new List<string>()
                 {
-                    "Act as Windows System Administrator for 5 Windows 2008 servers and several SQL databases",
-                    "Provide all levels of Technical Support for 60 workstations and users",
-                    "Troubleshoot and develop solutions for different types of eye field examination devices"
+                    "Acted as Windows System Administrator for 5 Windows 2008 servers and several SQL databases",
+                    "Provided all levels of Technical Support for 60 workstations and users",
+                    "Troubleshoot and developed solutions for different types of eye field examination devices"
                 },
                 new List<string>()
                 {
@@ -71,7 +71,7 @@ namespace johnsommerville.com.Pages
                 {
                     "Managed Windows and Mac OS X systems with software distribution platforms and server management systems",
                     "Provided scripting and development support for network administrators, help desk supervisors, and programmers",
-                    "Assist Library patrons and staff with computer technical support, hardware support, and software support"
+                    "Assisted library patrons and staff with computer technical support, hardware support, and software support"
                 },
                 new List<string>()
                 {
@@ -79,10 +79,10 @@ namespace johnsommerville.com.Pages
               new Employer("Co-op/Intern","L-3 Communications, Link Simulation and Training", "Arlington, Texas", DateTime.Parse("07/01/2008"), DateTime.Parse("02/01/2010"),
                 new List<string>()
                 {
-                    "Provide support for program, software, and system engineers",
-                    "Pull flight analytics and statistical information for engineers",
-                    "Assist engineers with developing flight simulators for Royal Danish Air Force, The Hellenic Air Force (Greece), American Air Force, and the American Navy",
-                    "Acquire and maintained a DOD Secret Clearance throughout internship"
+                    "Provided support for program, software, and system engineers",
+                    "Pulled flight analytics and statistical information for engineers",
+                    "Assisted engineers with developing flight simulators for Royal Danish Air Force, The Hellenic Air Force (Greece), American Air Force, and the American Navy",
+                    "Acquired and maintained a DOD Secret Clearance throughout internship"
                 },
                 new List<string>()
                 {
