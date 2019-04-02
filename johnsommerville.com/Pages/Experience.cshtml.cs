@@ -49,7 +49,7 @@ namespace johnsommerville.com.Pages
                 {
                     "Act as Windows System Administrator for over 30 small business customers across the DFW metroplex",
                     "Implement, manage, and upgrade Active Directory Domain Controllers, Microsoft Exchange servers, and other various servers per the clients requirements",
-                    "Develop and implement custom solutions amd scripts for client needs",
+                    "Develop and implement custom solutions and scripts for client needs",
                     "Maintained Level 1 and Level 2 help desk support, as well as 24/7 rotating call schedule"
                 },
                 new List<string>()
@@ -80,7 +80,7 @@ namespace johnsommerville.com.Pages
                 {
                     "Provide support for program, software, and system engineers",
                     "Pull flight analytics and statistical information for engineers",
-                    "Assist engieners with developing flight simulators for Royal Danish Air Force, The Hellenic Air Force (Greece), American Air Force, and the American Navy",
+                    "Assist engineers with developing flight simulators for Royal Danish Air Force, The Hellenic Air Force (Greece), American Air Force, and the American Navy",
                     "Acquire and maintained a DOD Secret Clearance throughout internship"
                 },
                 new List<string>()
