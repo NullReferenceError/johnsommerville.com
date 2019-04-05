@@ -7,4 +7,4 @@ service:
   externalPort: 80
 ingress:
   enabled: true
-  basedomain: jsomm-container-resourcegroup.jsomm-kube-cluster.westus.aksapp.io/ # replace with your own from the portal
+  basedomain: jsomm-kube-cluster.westus.aksapp.io/ # replace with your own from the portal
