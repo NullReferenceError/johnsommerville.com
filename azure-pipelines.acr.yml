@@ -43,6 +43,6 @@ steps:
   displayName: 'az login'
   condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
 
-- bash: az acr helm push -n $(registryName) $(build.artifactStagingDirectory)/$(chartName)-$(build.buildId).tgz
+- bash: az acr helm push -n $(registryName) $(build.artifactStagingDirectory)/$(chartName)-$(build.buildId).tgz -u $(registryLogin) -p $(registryPassword)
   displayName: 'az acr helm push'
   condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
